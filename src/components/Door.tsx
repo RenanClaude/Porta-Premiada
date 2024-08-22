@@ -10,7 +10,7 @@ interface DoorProps {
 export default function Door(props: DoorProps) {
   const door = props.value;
 
-  const selected = door?.selected ? styles.doorSelected : '';
+  const selected = door?.selected && !door.opened ? styles.doorSelected : '';
 
   const changeSelection = e => props.onChange(door.toggleSelection());
   // props.onChange(...): Após inverter o valor de selected, o novo objeto DoorModel é passado como argumento para a função onChange, que foi recebida como uma prop pelo componente Door.
@@ -19,17 +19,31 @@ export default function Door(props: DoorProps) {
   // O changeSelection é chamado, executando props.onChange(door.toggleSelection()).
   // A função passada como onChange em index.tsx é chamada com a nova instância de DoorModel, alterando o estado do componente pai (index.tsx).
 
+  const open = e => {
+    e.stopPropagation();
+    props.onChange(door.open());
+  }
+
+  function renderDoor() {
+    return (
+      <div className={`${styles.doorCasing} ${selected}`}>
+        <div className={styles.door}>
+          <div className={styles.doorNumber}>{door?.number}</div>
+          <div className={styles.doorHandle} onClick={open}></div>
+
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className={styles.doorArea} onClick={changeSelection}>
       {/* onClick={changeSelection}: Quando o elemento div é clicado, a função changeSelection é executada. Como vimos acima, isso inverte o estado de seleção da porta e chama a função onChange com a nova instância de DoorModel. */}
 
       <div className={`${styles.doorCasing} ${selected}`}>
-        <div className={styles.door}>
-          <div className={styles.doorNumber}>{door?.number}</div>
-          <div className={styles.doorHandle}></div>
-
-        </div>
+        {door.opened ? false : renderDoor()}
       </div>
+
       <div className={styles.doorFloor}></div>
     </div>
 
