@@ -28,6 +28,10 @@ export default class DoorModel {
     return this.#opened;
   }
 
+  get closed() {
+    return !this.#opened;
+  }
+
   deselect() {
     const selected = false;
     return new DoorModel(this.number, this.haveAGift, selected, this.opened);

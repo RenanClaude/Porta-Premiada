@@ -1,5 +1,6 @@
 import DoorModel from "../model/DoorModel";
 import styles from "../styles/Door.module.css";
+import Gift from "../components/Gift"
 
 interface DoorProps {
   value: DoorModel,
@@ -26,13 +27,11 @@ export default function Door(props: DoorProps) {
 
   function renderDoor() {
     return (
-      <div className={`${styles.doorCasing} ${selected}`}>
         <div className={styles.door}>
           <div className={styles.doorNumber}>{door?.number}</div>
           <div className={styles.doorHandle} onClick={open}></div>
 
         </div>
-      </div>
     )
   }
 
@@ -41,7 +40,8 @@ export default function Door(props: DoorProps) {
       {/* onClick={changeSelection}: Quando o elemento div é clicado, a função changeSelection é executada. Como vimos acima, isso inverte o estado de seleção da porta e chama a função onChange com a nova instância de DoorModel. */}
 
       <div className={`${styles.doorCasing} ${selected}`}>
-        {door.opened ? false : renderDoor()}
+        {door.closed ? renderDoor() : 
+        door.haveAGift ? <Gift /> : false }
       </div>
 
       <div className={styles.doorFloor}></div>
