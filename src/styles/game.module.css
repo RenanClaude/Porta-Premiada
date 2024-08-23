@@ -14,16 +14,28 @@
 }
 
 .buttons {
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   margin-top: 40px;
+  background-color: red;
+  
 
 }
 
-.buttons button {
+.buttons:hover button{
+  box-sizing: border-box;
   background-color: #c0392c;
   color: white;
+  border: 5px solid red;
+  transition: 1s;
+}
+
+.buttons button {
+  box-sizing: border-box;
+  background-color: rgb(100, 100, 100);
+  color: rgb(44, 44, 44);
   font-size: 2rem;
-  border: none;
+  border: 5px solid transparent;
   padding: 10px 25px;
 }

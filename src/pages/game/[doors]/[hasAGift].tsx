@@ -1,11 +1,20 @@
 import Door from "@/components/Door";
 import { createDoors, updateDoors } from "@/functions/doorFunctions";
-import { useState } from "react";
-import styles from "../styles/game.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import styles from "../../../styles/game.module.css";
 
 export default function Game() {
-  const [doors, setDoors] = useState(createDoors(5, 2))
+  const [doors, setDoors] = useState([])
+  const router = useRouter();
+
+  useEffect(() => {
+    console.log(router.query)
+    const quantity = Number(router.query.doors);
+    const doorGift = +router.query.hasAGift;
+    setDoors(createDoors(quantity, doorGift))
+  }, [router.query]);
 
   function renderDoors() {
     return doors.map((door => {
@@ -23,7 +32,7 @@ export default function Game() {
       </div>
       <div className={styles.buttons}>
         <Link href="/">
-        <button>Reiniciar jogo</button>
+          <button>Reiniciar jogo</button>
         </Link>
       </div>
     </div>
