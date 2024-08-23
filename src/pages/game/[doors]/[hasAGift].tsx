@@ -3,7 +3,7 @@ import { createDoors, updateDoors } from "@/functions/doorFunctions";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import styles from "../../../styles/game.module.css";
+import styles from "../../../styles/Game.module.css";
 
 export default function Game() {
   const [doors, setDoors] = useState([])
