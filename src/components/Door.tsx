@@ -1,6 +1,6 @@
 import DoorModel from "../model/DoorModel";
 import styles from "../styles/Door.module.css";
-import Gift from "../components/Gift"
+import Gift from "./Gift"
 
 interface DoorProps {
   value: DoorModel,

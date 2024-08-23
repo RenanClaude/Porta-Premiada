@@ -6,11 +6,23 @@ import { useEffect, useState } from "react";
 import styles from "../../../styles/Game.module.css";
 
 export default function Game() {
-  const [doors, setDoors] = useState([])
+  const [doors, setDoors] = useState([]);
+  const [valid, setValid] = useState(false);
+
   const router = useRouter();
 
   useEffect(() => {
-    console.log(router.query)
+    const quantity = Number(router.query.doors);
+    const doorGift = +router.query.hasAGift;
+
+    const quantityValidation = quantity >= 3 && quantity <= 16;
+    const doorGiftValidation = doorGift >= 1 && doorGift <= quantity;
+
+    setValid(quantityValidation && doorGiftValidation);
+   
+  }, [router.query]);
+
+  useEffect(() => {
     const quantity = Number(router.query.doors);
     const doorGift = +router.query.hasAGift;
     setDoors(createDoors(quantity, doorGift))
@@ -26,7 +38,7 @@ export default function Game() {
   return (
     <div id={styles.game}>
       <div className={styles.doors}>
-        {renderDoors()}
+        {valid ? renderDoors() : <h1>A quantidade de portas deve estar entre 3 e 16, e a porta com o presente deve estar dentro da quantidade de portas!</h1>}
         {/* onChange={newDoor => setDoor1(newDoor)}: A prop onChange recebe uma função que, quando chamada, atualiza o estado de door1 com uma nova instância de DoorModel (passada como newDoor). 
       onChange={newDoor => setDoor1(newDoor)}: Aqui, onChange é uma prop que recebe uma função anônima. Essa função é definida como (newDoor) => setDoor1(newDoor), onde newDoor é o argumento que será passado pela função changeSelection em Door.tsx. */}
       </div>
