@@ -17,7 +17,6 @@ export function updateDoors(doors: DoorModel[], modifiedDoor: DoorModel) {
       return modifiedDoor;
     } else {
       return modifiedDoor.opened ? door : door.deselect();
-      // modifiedDoor é uma porta que acabou de ser modificada ou com a seleção ou com a abertura da porta. Se foi com a abertura, ela estará aberta, portanto não foi selecionada, portanto não deve ser desselecionada a porta que está atualmente selecionada, então é retornada door como já está, normalmente.
     }
   })
 }

@@ -9,7 +9,6 @@
 .doors {
   display: flex;
   flex-wrap: wrap;
-  /* align-self: stretch; */
   justify-content: center;
 }
 
@@ -38,4 +37,6 @@
   font-size: 2rem;
   border: 5px solid transparent;
   padding: 10px 25px;
+  cursor: pointer;
 }
+
