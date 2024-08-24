@@ -28,9 +28,10 @@ export default function Door(props: DoorProps) {
         </div>
     )
   }
-
+  
   return (
     <div className={styles.doorArea} onClick={changeSelection}>
+      
 
       <div className={`${styles.doorCasing} ${selected}`}>
         {door.closed ? renderDoor() : 
