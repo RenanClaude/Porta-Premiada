@@ -20,7 +20,6 @@ A aplicação consiste em um jogo de adivinhação baseado em um antigo programa
 - HTML / CSS / Javascript / Typescript
 - ReactJS
 - Next.js
-- 
 
 
 # Como executar o projeto
