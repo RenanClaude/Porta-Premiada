@@ -1,95 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Porta Premiada - Monty Hall
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/RenanClaude/porta-premiada/blob/main/LICENSE) 
 
-## Getting Started
+
+# Sobre o projeto
+
+Porta Premiada é uma aplicação front-end Web.
+
+A aplicação consiste em um jogo de adivinhação baseado em um antigo programa de televisão apresentado por Monty Hall. O jogo pode ser jogado conforme o programa, onde o participante/jogador escolhe uma porta entre três, e após sua escolha, uma das portas é aberta sem o prêmio. No próximo passo do jogo surge o chamado "Problema de Monty Hall", onde o participante deve escolher se ele mantém a porta escolhida ou se troca pela porta que sobrou. Nessa escolha há uma pegadinha lógica de probabilidade! O jogo funciona para duas pessoas, a que define os números das portas, e a que joga para adivinhar.
+
+
+## Layout web
+![Web Page 1](https://github.com/RenanClaude/assets/blob/main/monty-hall.png)
+
+![Web Page 2](https://github.com/RenanClaude/assets/blob/main/game.png)
+
+
+# Tecnologias utilizadas
+## Front end
+- HTML / CSS / Javascript / Typescript
+- ReactJS
+- Next.js
+- 
+
+
+# Como executar o projeto
 
 First, run the development server:
 
 ```bash
 npm run dev
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abrir [http://localhost:3000](http://localhost:3000) com o seu navegador para ver o resultado.
 
-# Porta Premiada - Monty Hall
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/devsuperior/sds1-wmazoni/blob/master/LICENSE) 
-
-# Sobre o projeto
-
-https://wmazoni-sds1.netlify.app
-
-Big Game Survey é uma aplicação full stack web e mobile construída durante a 1ª edição da **Semana DevSuperior** (#sds1), evento organizado pela [DevSuperior](https://devsuperior.com "Site da DevSuperior").
-
-A aplicação consiste em uma pesquisa de preferência de games, onde os dados são coletados no app mobile, e depois são listados no app web, que também apresenta um dashboard com gráficos baseados nestes dados.
-
-## Layout mobile
-![Mobile 1](https://github.com/acenelio/assets/raw/main/sds1/mobile1.png) ![Mobile 2](https://github.com/acenelio/assets/raw/main/sds1/mobile2.png)
-
-## Layout web
-![Web 1](https://github.com/acenelio/assets/raw/main/sds1/web1.png)
-
-![Web 2](https://github.com/acenelio/assets/raw/main/sds1/web2.png)
-
-## Modelo conceitual
-![Modelo Conceitual](https://github.com/acenelio/assets/raw/main/sds1/modelo-conceitual.png)
-
-# Tecnologias utilizadas
-## Back end
-- Java
-- Spring Boot
-- JPA / Hibernate
-- Maven
-## Front end
-- HTML / CSS / JS / TypeScript
-- ReactJS
-- React Native
-- Apex Charts
-- Expo
-## Implantação em produção
-- Back end: Heroku
-- Front end web: Netlify
-- Banco de dados: Postgresql
-
-# Como executar o projeto
-
-## Back end
-Pré-requisitos: Java 11
-
-```bash
-# clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
-
-# entrar na pasta do projeto back end
-cd backend
-
-# executar o projeto
-./mvnw spring-boot:run
-```
-
-## Front end web
-Pré-requisitos: npm / yarn
-
-```bash
-# clonar repositório
-git clone https://github.com/devsuperior/sds1-wmazoni
-
-# entrar na pasta do projeto front end web
-cd front-web
-
-# instalar dependências
-yarn install
-
-# executar o projeto
-yarn start
-```
 
 # Autor
 
-Wellington Mazoni de Andrade
+Renan Claude Grossl
 
-https://www.linkedin.com/in/wmazoni
+https://www.linkedin.com/in/renan-claude-dev/
