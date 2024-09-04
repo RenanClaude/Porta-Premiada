@@ -17,7 +17,8 @@ A aplicação consiste em um jogo de adivinhação baseado em um antigo programa
 
 # Tecnologias utilizadas
 ## Front end
-- HTML / CSS / Javascript / Typescript
+- HTML / CSS
+- Javascript / Typescript
 - ReactJS
 - Next.js
 
